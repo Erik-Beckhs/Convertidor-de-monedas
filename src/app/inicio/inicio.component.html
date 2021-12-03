@@ -1,0 +1,38 @@
+<div class="bg-info p-5 text-white h4">
+  Convertidor de Monedas
+</div>
+
+  <div class="d-flex justify-content-center mt-3">
+
+    <div class="card" style="width: 54rem;">
+        <div class="control">
+          <div class="form-group p-5">
+            <label class="h4">Cantidad</label>
+            <input class="input" (keyup)="convertir()" [(ngModel)]="cantidad" type="number" placeholder="Introduzca cantidad">
+          </div>
+          <div class="row p-5">
+            <div class="col-md-6">
+              <label class="form-label h4">Tengo</label>
+              <select (change)="convertir()" class="form-select" [(ngModel)]="tengo">
+                <option *ngFor="let money of moneda" [value]="money.name">{{money.valor}}</option>
+              </select>
+            </div>
+              <div class="col-md-6">
+                <label class="form-label h4">Quiero</label>
+                <select (change)="convertir()" class="form-select" [(ngModel)]="quiero">
+                  <option *ngFor="let money of moneda" [value]="money.name">{{money.valor}}</option>
+                </select>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-2">
+    <label class="h1 bg-success px-4 text-white" style="border-radius:20px">{{cantidad}} {{tengo}} son {{total}} {{quiero}}</label>
+  </div>
+
+  
+  
+
+    
